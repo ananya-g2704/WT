@@ -1,0 +1,188 @@
+/* Universal Box Sizing for consistent layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Base styling for body and layout */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px; /* Added overall padding to the body */
+  background-color: Tea Rose;
+  color: #4A4A4A; /* Dark grey for general text */
+  background-size: cover;
+  background-attachment: fixed; /* Keep background fixed when scrolling */
+}
+
+/* Header and Navigation */
+header {
+  background-color: #E6BFB3; /* Light Tea Rose Pink - header color */
+  color: #654321; /* Dark Brown for header text */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow for header */
+  border-radius: 10px; /* Rounded corners for the header */
+  margin-bottom: 20px; /* Added margin below header */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Increased gap for better spacing */
+  padding: 0;
+  margin-top: 15px; /* Adjusted margin */
+}
+
+nav a {
+  color: #654321; /* Dark Brown for nav links */
+  text-decoration: none; /* Removed default underline */
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+  padding: 10px 18px; /* Increased padding for larger clickable area */
+  border-radius: 25px; /* More rounded pill shape for links */
+  border: 1px solid transparent; /* Subtle border for hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for links */
+}
+
+nav a:hover,
+nav a.active {
+  color: #FFFFFF; /* White on hover */
+  background-color: #CD5C5C; /* Deeper rose background on hover/active */
+  box-shadow: 0 4px 8px rgba(205, 92, 92, 0.3); /* Enhanced shadow on hover */
+  border-color: #CD5C5C; /* Border color matches background on hover */
+}
+
+nav li a {
+  /* No specific styles needed here, inherited from nav a */
+}
+
+/* Main content area */
+main {
+  padding: 40px;
+  max-width: 900px;
+  margin: 20px auto; /* Add margin top/bottom and center */
+  background-color: #FFFFFF; /* Pure white for main content background */
+  box-shadow: 0 0 20px rgba(230, 191, 179, 0.6); /* Enhanced soft tea rose shadow */
+  border-radius: 15px; /* Slightly more rounded */
+}
+
+/* Section headings */
+h1, h2 {
+  color: #CD5C5C; /* Indian Red - deeper rose for main headings */
+  text-align: center;
+  margin-bottom: 15px; /* Increased margin */
+}
+
+h3 {
+  color: #8B4513; /* Saddle Brown - warm brown for sub-headings */
+  margin-top: 25px; /* Increased margin */
+  margin-bottom: 10px;
+}
+
+/* Category layout */
+.category {
+  margin-bottom: 50px;
+}
+
+.dish-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center; /* Center columns if they don't fill the row */
+}
+
+.column {
+  flex: 1;
+  min-width: 280px; /* Slightly increased min-width for columns */
+  background-color: #FFFBF7; /* Very light cream for column background */
+  border: 1px solid #F0D9D0; /* Light pink border */
+  padding: 20px; /* Increased padding for columns */
+  border-radius: 10px; /* Rounded corners for columns */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow for columns */
+}
+
+.column ul {
+  list-style: none;
+  padding-left: 0; /* Removed default padding */
+  margin: 0; /* Removed default margin */
+}
+
+.column li {
+  background-color: #FFFBF7; /* Very light cream for list items */
+  border: 1px solid #F0D9D0; /* Light pink border */
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+}
+
+/* Emphasize price and description */
+strong {
+  color: #4A4A4A; /* Dark grey */
+}
+
+em {
+  font-style: italic;
+  color: #777777; /* Darker Gray */
+}
+
+/* Footer styling */
+footer {
+  background-color: #E6BFB3; /* Light Tea Rose Pink - footer color */
+  color: #654321; /* Dark Brown for footer text */
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px; /* Rounded corners for the footer */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Shadow above footer */
+}
+
+/* Box Model Styling for ALL Dish Items */
+li {
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect for Dish Cards */
+li:hover {
+  box-shadow: 0 6px 12px rgba(230, 191, 179, 0.7); /* Enhanced tea rose shadow on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.home-banner {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 10px; /* Less padding on smaller screens */
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav a {
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  main {
+    padding: 20px;
+    margin: 10px auto;
+  }
+  .dish-columns {
+    flex-direction: column;
+  }
+  .column {
+    min-width: unset; /* Remove min-width for full width on small screens */
+    width: 100%;
+    padding: 15px; /* Adjusted padding for columns on small screens */
+  }
+}
