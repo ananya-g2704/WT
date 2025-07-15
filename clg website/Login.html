@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVR College of Engineering - All Pages</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Hide all sections by default */
+    section {
+      display: none;
+      padding-top: 1rem; /* Add some padding to prevent content being hidden by sticky header */
+    }
+
+    /* Show the targeted section */
+    section:target {
+      display: block;
+    }
+
+    /* Default view: Show home section if no target is specified in the URL */
+    /* This uses :has() which might not be supported in very old browsers. */
+    /* If you don't see the Home page initially, your browser might not support :has(). */
+    body:not(:has(section:target)) #home-section {
+      display: block;
+    }
+
+    /* Styling for the fixed header */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header Section -->
+  <header class="bg-blue-800 text-white p-4 shadow-md sticky-header">
+    <nav class="container mx-auto flex flex-wrap justify-between items-center">
+      <h1 class="text-3xl font-bold rounded-md p-2 hover:bg-blue-700 transition-colors cursor-pointer">
+        <a href="#home-section" class="text-white no-underline">CVR College of Engineering</a>
+      </h1>
+      <ul class="flex flex-wrap space-x-4 md:space-x-6 mt-4 md:mt-0">
+        <li><a href="#home-section" class="px-4 py-2 rounded-md bg-blue-700 hover:bg-blue-600 transition-colors text-lg no-underline">Home</a></li>
+        <li><a href="#login-section" class="px-4 py-2 rounded-md bg-blue-700 hover:bg-blue-600 transition-colors text-lg no-underline">Login</a></li>
+        <li><a href="#registration-section" class="px-4 py-2 rounded-md bg-blue-700 hover:bg-blue-600 transition-colors text-lg no-underline">Registration</a></li>
+        <li><a href="#catalogue-section" class="px-4 py-2 rounded-md bg-blue-700 hover:bg-blue-600 transition-colors text-lg no-underline">Book Catalogue</a></li>
+        <li><a href="#cart-section" class="px-4 py-2 rounded-md bg-blue-700 hover:bg-blue-600 transition-colors text-lg no-underline">Cart</a></li>
+        <li><a href="#departments-section" class="px-4 py-2 rounded-md bg-blue-700 hover:bg-blue-600 transition-colors text-lg no-underline">Departments</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pb-8">
+    <!-- Home Page Section -->
+    <section id="home-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8 text-center">
+        <h2 class="text-4xl font-extrabold text-blue-800 mb-6">CVR College of Engineering</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+          The Cherabuddi Education Society was registered in January 1999 as an NRI-promoted society.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+          The Society aims at creating a state-of-the-art engineering institution in association with
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+          leading NRI technology professionals and well-known academicians of the twin states of Telangana & Andhra Pradesh.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          The Society aims to harness technical excellence with a commitment to the ethos of 'useful learning'.
+        </p>
+      </div>
+    </section>
+
+    <!-- Login Page Section -->
+    <section id="login-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8 max-w-md">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">Login Page</h2>
+        <!-- Form now redirects to welcome-message-section upon submission -->
+        <form class="space-y-4" action="#welcome-message-section" method="get">
+          <div>
+            <label for="login-name" class="block text-gray-700 text-lg font-medium mb-2">Name:</label>
+            <input
+              type="text"
+              id="login-name"
+              name="name"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label for="login-password" class="block text-gray-700 text-lg font-medium mb-2">Password:</label>
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div class="flex justify-center space-x-4">
+            <button
+              type="submit"
+              class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors shadow-md"
+            >
+              Submit
+            </button>
+            <button
+              type="reset"
+              class="px-6 py-3 bg-gray-300 text-gray-800 font-semibold rounded-md hover:bg-gray-400 transition-colors shadow-md"
+            >
+              Reset
+            </button>
+          </div>
+          <p class="text-center text-gray-500 text-sm mt-4">Note: This is a static page. Login functionality requires JavaScript.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Static Welcome Message Section (Target for Login Form) -->
+    <section id="welcome-message-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8 text-center max-w-md border-4 border-green-500">
+        <h2 class="text-3xl font-bold text-green-700 mb-4">Welcome!</h2>
+        <p class="text-lg text-gray-700 mb-6">You have successfully attempted to log in.</p>
+        <a href="#home-section" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors shadow-md no-underline">
+          Go to Home Page
+        </a>
+        <p class="text-center text-gray-500 text-sm mt-4">Note: This is a static page. Dynamic content (like showing your name) requires JavaScript.</p>
+      </div>
+    </section>
+
+    <!-- Registration Page Section -->
+    <section id="registration-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">Registration</h2>
+        <form class="space-y-4" action="#" method="post">
+          <div>
+            <label for="reg-name" class="block text-gray-700 text-lg font-medium mb-2">Name:</label>
+            <input
+              type="text"
+              id="reg-name"
+              name="name"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label for="reg-password" class="block text-gray-700 text-lg font-medium mb-2">Password:</label>
+            <input
+              type="password"
+              id="reg-password"
+              name="password"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label for="reg-email" class="block text-gray-700 text-lg font-medium mb-2">Email-Id:</label>
+            <input
+              type="email"
+              id="reg-email"
+              name="email"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label for="reg-number" class="block text-gray-700 text-lg font-medium mb-2">Phone Number:</label>
+            <input
+              type="number"
+              id="reg-number"
+              name="number"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-gray-700 text-lg font-medium mb-2">Date of Birth:</label>
+            <div class="flex space-x-2">
+              <select name="day" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 flex-grow" required>
+                <option value="">Day</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+              </select>
+              <select name="month" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 flex-grow" required>
+                <option value="">Month</option>
+                <option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
+              </select>
+              <select name="year" class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 flex-grow" required>
+                <option value="">Year</option>
+                <option>1980</option><option>1981</option><option>1982</option><option>1983</option><option>1984</option><option>1985</option><option>1986</option><option>1987</option><option>1988</option><option>1989</option><option>1990</option><option>1991</option><option>1992</option><option>1993</option><option>1994</option><option>1995</option><option>1996</option><option>1997</option><option>1998</option><option>1999</option><option>2000</option><option>2001</option><option>2002</option><option>2003</option><option>2004</option><option>2005</option><option>2006</option><option>2007</option><option>2008</option><option>2009</option><option>2010</option><option>2011</option><option>2012</option><option>2013</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option><option>2018</option><option>2019</option><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-gray-700 text-lg font-medium mb-2">Sex:</label>
+            <div class="flex space-x-4">
+              <label class="inline-flex items-center">
+                <input type="radio" id="male" name="sex" value="Male" class="form-radio text-blue-600" required />
+                <span class="ml-2 text-gray-700">Male</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" id="female" name="sex" value="Female" class="form-radio text-blue-600" />
+                <span class="ml-2 text-gray-700">Female</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" id="other" name="sex" value="Other" class="form-radio text-blue-600" />
+                <span class="ml-2 text-gray-700">Other</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="block text-gray-700 text-lg font-medium mb-2">Languages Known:</label>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="inline-flex items-center">
+                <input type="checkbox" id="english" name="languages" value="English" class="form-checkbox text-blue-600 rounded" />
+                <span class="ml-2 text-gray-700">English</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="checkbox" id="hindi" name="languages" value="Hindi" class="form-checkbox text-blue-600 rounded" />
+                <span class="ml-2 text-gray-700">Hindi</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="checkbox" id="telugu" name="languages" value="Telugu" class="form-checkbox text-blue-600 rounded" />
+                <span class="ml-2 text-gray-700">Telugu</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="checkbox" id="tamil" name="languages" value="Tamil" class="form-checkbox text-blue-600 rounded" />
+                <span class="ml-2 text-gray-700">Tamil</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label for="address" class="block text-gray-700 text-lg font-medium mb-2">Address:</label>
+            <textarea
+              id="address"
+              name="address"
+              rows="4"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            ></textarea>
+          </div>
+          <div class="flex justify-center space-x-4">
+            <button
+              type="submit"
+              class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors shadow-md"
+            >
+              Submit
+            </button>
+            <button
+              type="reset"
+              class="px-6 py-3 bg-gray-300 text-gray-800 font-semibold rounded-md hover:bg-gray-400 transition-colors shadow-md"
+            >
+              Reset
+            </button>
+          </div>
+          <p class="text-center text-gray-500 text-sm mt-4">Note: This is a static page. Registration functionality requires JavaScript.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Book Catalogue Section -->
+    <section id="catalogue-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">Online Bookstore</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+              <tr class="bg-blue-100 text-blue-800">
+                <th class="py-3 px-4 border-b text-left">Book Image</th>
+                <th class="py-3 px-4 border-b text-left">Book Information</th>
+                <th class="py-3 px-4 border-b text-left">Price</th>
+                <th class="py-3 px-4 border-b text-left">Add to Cart</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-4 px-4 border-b">
+                  <img src="https://tse1.mm.bing.net/th/id/OIP.5J5NM91_bIqBij-CbxIVNwHaLN?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="The Alchemist" class="w-24 h-32 object-cover rounded-md shadow-sm" onerror="this.onerror=null;this.src='https://placehold.co/96x128/cccccc/333333?text=No+Image';">
+                </td>
+                <td class="py-4 px-4 border-b text-gray-800">
+                  <strong class="block text-lg font-semibold">The Alchemist</strong>
+                  <span class="block text-sm">Author: Paulo Coelho</span>
+                  <span class="block text-sm">Genre: Fiction</span>
+                  <span class="block text-sm">Year: 1988</span>
+                </td>
+                <td class="py-4 px-4 border-b text-gray-800 font-bold">₹499</td>
+                <td class="py-4 px-4 border-b">
+                  <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow-md">
+                    Add to Cart
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 border-b">
+                  <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1588286863i/634583.jpg" alt="Wings of Fire" class="w-24 h-32 object-cover rounded-md shadow-sm" onerror="this.onerror=null;this.src='https://placehold.co/96x128/cccccc/333333?text=No+Image';">
+                </td>
+                <td class="py-4 px-4 border-b text-gray-800">
+                  <strong class="block text-lg font-semibold">Wings of Fire</strong>
+                  <span class="block text-sm">Author: A.P.J. Abdul Kalam</span>
+                  <span class="block text-sm">Genre: Autobiography</span>
+                  <span class="block text-sm">Year: 1999</span>
+                </td>
+                <td class="py-4 px-4 border-b text-gray-800 font-bold">₹350</td>
+                <td class="py-4 px-4 border-b">
+                  <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow-md">
+                    Add to Cart
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 border-b">
+                  <img src="https://tse2.mm.bing.net/th/id/OIP.s7QwGAsi6-jk1-DaCJVEoQHaLG?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="A Brief History of Time" class="w-24 h-32 object-cover rounded-md shadow-sm" onerror="this.onerror=null;this.src='https://placehold.co/96x128/cccccc/333333?text=No+Image';">
+                </td>
+                <td class="py-4 px-4 border-b text-gray-800">
+                  <strong class="block text-lg font-semibold">A Brief History of Time</strong>
+                  <span class="block text-sm">Author: Stephen Hawking</span>
+                  <span class="block text-sm">Genre: Science</span>
+                  <span class="block text-sm">Year: 1988</span>
+                </td>
+                <td class="py-4 px-4 border-b text-gray-800 font-bold">₹599</td>
+                <td class="py-4 px-4 border-b">
+                  <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow-md">
+                    Add to Cart
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-gray-500 text-sm mt-4">Note: Cart functionality requires JavaScript.</p>
+      </div>
+    </section>
+
+    <!-- Cart Page Section -->
+    <section id="cart-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">Book Cart</h2>
+        <div class="overflow-x-auto">
+          <!-- Static cart content - cannot be dynamically updated without JavaScript -->
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+              <tr class="bg-blue-100 text-blue-800">
+                <th class="py-3 px-4 border-b text-left">Title</th>
+                <th class="py-3 px-4 border-b text-left">Author</th>
+                <th class="py-3 px-4 border-b text-left">Genre</th>
+                <th class="py-3 px-4 border-b text-left">Price</th>
+                <th class="py-3 px-4 border-b text-left">Quantity</th>
+                <th class="py-3 px-4 border-b text-left">Total</th>
+                <th class="py-3 px-4 border-b text-left">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-4 px-4 border-b text-gray-800">The Alchemist</td>
+                <td class="py-4 px-4 border-b text-gray-800">Paulo Coelho</td>
+                <td class="py-4 px-4 border-b text-gray-800">Fiction</td>
+                <td class="py-4 px-4 border-b text-gray-800">₹499</td>
+                <td class="py-4 px-4 border-b text-gray-800">
+                  <div class="flex items-center space-x-2">
+                    <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors" disabled>-</button>
+                    <span class="font-semibold">1</span>
+                    <button class="px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors" disabled>+</button>
+                  </div>
+                </td>
+                <td class="py-4 px-4 border-b text-gray-800">₹499</td>
+                <td class="py-4 px-4 border-b">
+                  <button class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors shadow-md">
+                    Remove
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 border-b text-gray-800">Wings of Fire</td>
+                <td class="py-4 px-4 border-b text-gray-800">A.P.J. Abdul Kalam</td>
+                <td class="py-4 px-4 border-b text-gray-800">Autobiography</td>
+                <td class="py-4 px-4 border-b text-gray-800">₹350</td>
+                <td class="py-4 px-4 border-b text-gray-800">
+                  <div class="flex items-center space-x-2">
+                    <button class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors" disabled>-</button>
+                    <span class="font-semibold">2</span>
+                    <button class="px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors" disabled>+</button>
+                  </div>
+                </td>
+                <td class="py-4 px-4 border-b text-gray-800">₹700</td>
+                <td class="py-4 px-4 border-b">
+                  <button class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors shadow-md">
+                    Remove
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5" class="py-4 px-4 text-right font-bold text-gray-800"><strong>Total Cart Amount</strong></td>
+                <td colspan="2" class="py-4 px-4 font-bold text-gray-800">₹1199</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center mt-6">
+          <button class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors shadow-md">
+            Proceed to Checkout
+          </button>
+        </div>
+        <p class="text-center text-gray-500 text-sm mt-4">Note: Cart functionality and checkout require JavaScript.</p>
+      </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8 text-center">
+        <h2 class="text-3xl font-bold text-blue-800 mb-6">Our Departments</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a href="#cse-faculty-section" class="px-6 py-4 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 transition-colors shadow-md text-xl no-underline">CSE Faculty</a>
+          <a href="#cs-faculty-section" class="px-6 py-4 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 transition-colors shadow-md text-xl no-underline">CS Faculty</a>
+          <a href="#aiml-faculty-section" class="px-6 py-4 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 transition-colors shadow-md text-xl no-underline">AIML Faculty</a>
+          <a href="#aids-faculty-section" class="px-6 py-4 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 transition-colors shadow-md text-xl no-underline">AIDS Faculty</a>
+          <a href="#ds-faculty-section" class="px-6 py-4 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 transition-colors shadow-md text-xl no-underline">DS Faculty</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Sections (Static Content) -->
+    <section id="cse-faculty-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">CSE FACULTY</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+              <tr class="bg-blue-100 text-blue-800">
+                <th class="py-3 px-4 border-b text-left">Name</th>
+                <th class="py-3 px-4 border-b text-left">Designation</th>
+                <th class="py-3 px-4 border-b text-left">Qualifications</th>
+                <th class="py-3 px-4 border-b text-left">ID / AICTE ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Prof. L.C. Siva Reddy</td><td>Vice-Principal</td><td>M.Phil., M.Tech.</td><td>1-465766349</td></tr>
+              <tr><td>Dr. Hrushikesha Mohanty</td><td>Professor</td><td>Ph.D.</td><td>CVRCSEF238</td></tr>
+              <tr><td>Dr. A. Vani Vathsala</td><td>Head of the Department</td><td>M.Tech., Ph.D.</td><td>1-465766435</td></tr>
+              <tr><td>Dr. Raghava V. Cherabuddi</td><td>Professor</td><td>M.S, Ph.D. (U.S.A)</td><td>1-466257427</td></tr>
+              <tr><td>Dr. Raghava M</td><td>Associate Dean, Alumni Affairs</td><td>M.Tech., Ph.D.</td><td>1-465766383</td></tr>
+              <tr><td>Dr. B. Ram Babu</td><td>Associate Dean, Faculty Affairs</td><td>M.Tech., Ph.D.</td><td>1-465766387</td></tr>
+              <tr><td>Dr. C. Ramesh</td><td>Associate Dean, Student Affairs</td><td>M.Tech., Ph.D.</td><td>1-465766371</td></tr>
+              <tr><td>Dr. D. Durga Bhavani</td><td>Professor</td><td>M.Tech., Ph.D.</td><td>1-3574852233</td></tr>
+              <tr><td>Dr. N. Subhash Chandra</td><td>Professor</td><td>M.Tech., Ph.D.</td><td>1-3559282244</td></tr>
+              <tr><td>Dr. V. Dattatreya</td><td>Professor</td><td>M.Tech., Ph.D.</td><td>1-465766427</td></tr>
+              <tr><td>Dr. G. Balakrishna</td><td>Professor</td><td>M.Tech., Ph.D.</td><td>1-3572268181</td></tr>
+              <tr><td>Dr. S. Suguna Mallika</td><td>Professor</td><td>M.Tech., Ph.D.</td><td>1-465766461</td></tr>
+              <tr><td>Dr. D. Sandhya Rani</td><td>Professor</td><td>M.Tech., Ph.D.</td><td>1-3572116863</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="cs-faculty-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">CS FACULTY</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+              <tr class="bg-blue-100 text-blue-800">
+                <th class="py-3 px-4 border-b text-left">Name</th>
+                <th class="py-3 px-4 border-b text-left">Designation</th>
+                <th class="py-3 px-4 border-b text-left">Qualifications</th>
+                <th class="py-3 px-4 border-b text-left">AICTE ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Dr. Sunitha Maddhi</td><td>Head of the Department</td><td>M.Tech., Ph.D</td><td>1-465766473</td></tr>
+              <tr><td>Dr. B. Vikranth</td><td>Professor</td><td>M.Tech., Ph.D</td><td>1-465766819</td></tr>
+              <tr><td>Dr. M. Radha</td><td>Associate Professor</td><td>M.Tech., Ph.D</td><td>1-9439791744</td></tr>
+              <tr><td>Dr. C. Raghavendra</td><td>Associate Professor</td><td>M.Tech., Ph.D</td><td>1-3553642702</td></tr>
+              <tr><td>Dr. R. Raja</td><td>Associate Professor</td><td>M.Tech., Ph.D</td><td>1-7512334374</td></tr>
+              <tr><td>Dr. V. Deepika</td><td>Associate Professor</td><td>M.Tech., Ph.D</td><td>1-7342850608</td></tr>
+              <tr><td>Mrs. G. Sunitha Rekha</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-466257331</td></tr>
+              <tr><td>Mrs. M. Vasavi</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-3194452956</td></tr>
+              <tr><td>Dr. L. Roshini</td><td>Sr. Assistant Professor</td><td>M.Tech., Ph.D</td><td>1-9315113048</td></tr>
+              <tr><td>Mrs. K. Manasa</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-3187241862</td></tr>
+              <tr><td>Mr. Avinash Amaranayani</td><td>Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-7351547198</td></tr>
+              <tr><td>Mrs. Vasantha Lakshmi</td><td>Assistant Professor</td><td>M.Tech</td><td>1-9312901136</td></tr>
+              <tr><td>Mrs. K. Swathi</td><td>Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-9312900834</td></tr>
+              <tr><td>Mr. Gadidala Venkatesh</td><td>Assistant Professor</td><td>M.Tech</td><td>1-11014758009</td></tr>
+              <tr><td>Mr. G. Sravan Kumar</td><td>Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-7468733129</td></tr>
+              <tr><td>Mrs. Sahithi Godavarthi</td><td>Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-7505623235</td></tr>
+              <tr><td>Mrs. M. Sumalatha</td><td>Assistant Professor</td><td>M.Tech</td><td>1-11292334573</td></tr>
+              <tr><td>Mrs. M. Silpa Raj</td><td>Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-1427003389</td></tr>
+              <tr><td>Mr. K. Prakasha Chary</td><td>Assistant Professor</td><td>M.Tech</td><td>1-2898694004</td></tr>
+              <tr><td>Mr. B. Naresh</td><td>Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-2185006409</td></tr>
+              <tr><td>Mr. Ravindrareddy Chilukuri</td><td>Assistant Professor</td><td>M.Tech</td><td>1-1592467142</td></tr>
+              <tr><td>Mr. Ediga Amarnath Goud</td><td>Assistant Professor</td><td>M.Tech., (Ph.D)</td><td>1-3202741662</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="aiml-faculty-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">AIML FACULTY</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+              <tr class="bg-blue-100 text-blue-800">
+                <th class="py-3 px-4 border-b text-left">Name</th>
+                <th class="py-3 px-4 border-b text-left">Designation</th>
+                <th class="py-3 px-4 border-b text-left">Qualifications</th>
+                <th class="py-3 px-4 border-b text-left">AICTE ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Dr. Lakshmi H.N</td><td>Associate Dean, Emerging Technologies</td><td>M.S., Ph.D.</td><td>1-464938977</td></tr>
+              <tr><td>Dr. R. Usha Rani</td><td>Head of the Department</td><td>M.Tech., Ph.D.</td><td>1-3234184937</td></tr>
+              <tr><td>Dr. A. Jagadeeswara Rao</td><td>Professor</td><td>M.Tech., Ph.D.</td><td>1-4643080954</td></tr>
+              <tr><td>Dr. Y. Sowmya Reddy</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-3538153491</td></tr>
+              <tr><td>Dr. M. Surya Bhupal Rao</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-452890431</td></tr>
+              <tr><td>Dr. Y. Alekya Rani</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-10711256962</td></tr>
+              <tr><td>Dr. T. Venkata Ramana</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-9563453928</td></tr>
+              <tr><td>Dr. N. HanumanthaRao</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-2189971905</td></tr>
+              <tr><td>Dr. B. Prasanthi</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-431129357</td></tr>
+              <tr><td>Dr. N. Vikram Narayandas</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1732-250203-110823 (JNTUH)</td></tr>
+              <tr><td>Dr. K. H. Vijaya Kumari</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-3548239353</td></tr>
+              <tr><td>Ms. G. Bhagyasri</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-466257327</td></tr>
+              <tr><td>Mr. N. Nagarjuna</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-465766411</td></tr>
+              <tr><td>Mr. D. Ratnam</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-4879757164</td></tr>
+              <tr><td>Ms. U. Sadhana</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-2900839433</td></tr>
+              <tr><td>Ms. Farhana Bano</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-2914976197</td></tr>
+              <tr><td>Mr. U. Raghavendra Swamy</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-7471535079</td></tr>
+              <tr><td>Mr. Azmera Chandu Naik</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-2282154124</td></tr>
+              <tr><td>Mr. J. Phani Prasad</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-34244858605</td></tr>
+              <tr><td>Ms. K. Anuradha</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-10655039081</td></tr>
+              <tr><td>Ms. K. Sindhuja</td><td>Assistant Professor</td><td>M.Tech.</td><td>1-3561213077</td></tr>
+              <tr><td>Ms. K. Ambika</td><td>Assistant Professor</td><td>M.Tech.</td><td>1-4605508714</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="aids-faculty-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">AIDS FACULTY</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+              <tr class="bg-blue-100 text-blue-800">
+                <th class="py-3 px-4 border-b text-left">Name</th>
+                <th class="py-3 px-4 border-b text-left">Designation</th>
+                <th class="py-3 px-4 border-b text-left">Qualifications</th>
+                <th class="py-3 px-4 border-b text-left">AICTE ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Mrs. S. Lalitha</td><td>Faculty</td><td>M.Tech.</td><td>1-2640242758</td></tr>
+              <tr><td>Mrs. P Nagarani</td><td>Faculty</td><td>M.Tech.</td><td>1-7351548090</td></tr>
+              <tr><td>Mr. S. Balakrishna Reddy</td><td>Faculty</td><td>M.Tech., (Ph.D.)</td><td>1-3378342750</td></tr>
+              <tr><td>Mrs. M. Nikita</td><td>Faculty</td><td>M.Tech., (Ph.D.)</td><td>1-7468491265</td></tr>
+              <tr><td>Mr. Prashanth Donda</td><td>Faculty</td><td>M.Tech.</td><td>1-7373873363</td></tr>
+              <tr><td>Mr. V. Ramesh</td><td>Faculty</td><td>M.Tech., (Ph.D.)</td><td>1-2641332443</td></tr>
+              <tr><td>Mrs. Arava Nagasri</td><td>Faculty</td><td>M.Tech., (Ph.D.)</td><td>1-500059291</td></tr>
+              <tr><td>Mrs. M. Srivani</td><td>Faculty</td><td>M.Tech.</td><td>1-2376879436</td></tr>
+              <tr><td>Mrs. T. Ramya</td><td>Faculty</td><td>M.Tech., (Ph.D.)</td><td>1-4620807614</td></tr>
+              <tr><td>Mr. V. Praveen Kumar</td><td>Faculty</td><td>M.Tech., (Ph.D.)</td><td>1-7519599442</td></tr>
+              <tr><td>Mrs. B. Sabitha</td><td>Faculty</td><td>M.Tech.</td><td>1-3188975449</td></tr>
+              <tr><td>Mr. Moghal Yaseen Pasha</td><td>Faculty</td><td>M.Tech.</td><td>1-1599525633</td></tr>
+              <tr><td>Dr. Afreen Fatima Mohammed</td><td>Faculty</td><td>M.Tech., Ph.D.</td><td>1-2676128378</td></tr>
+              <tr><td>Mr. Erugu Krishna</td><td>Faculty</td><td>M.Tech., (Ph.D.)</td><td>1-3380870053</td></tr>
+              <tr><td>Mrs. V. Swathi</td><td>Faculty</td><td>M.Tech., (Ph.D.)</td><td>1-2301417654</td></tr>
+              <tr><td>Mr. K. Ravikiran Reddy</td><td>Faculty</td><td>M.Tech., (Ph.D.)</td><td>6474-250212-120313 (JNTUH)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="ds-faculty-section">
+      <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">DS FACULTY</h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+              <tr class="bg-blue-100 text-blue-800">
+                <th class="py-3 px-4 border-b text-left">Name</th>
+                <th class="py-3 px-4 border-b text-left">Designation</th>
+                <th class="py-3 px-4 border-b text-left">Qualifications</th>
+                <th class="py-3 px-4 border-b text-left">AICTE ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Dr. S.V. Suryanarayana</td><td>Head of the Department</td><td>M.Tech., Ph.D.</td><td>1-3572025193</td></tr>
+              <tr><td>Dr. N. Satyanarayana</td><td>Professor</td><td>M.Tech., Ph.D.</td><td>1-2181574427</td></tr>
+              <tr><td>Dr. LNC Prakash K</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-444211135</td></tr>
+              <tr><td>Dr. A. Srinivasa Reddy</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-3567131385</td></tr>
+              <tr><td>Dr. Varaprasad Rao M</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-9324390644</td></tr>
+              <tr><td>Dr. Rama Krishna B</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-459905523</td></tr>
+              <tr><td>Dr. Shaik Janbhasha</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-43955112564</td></tr>
+              <tr><td>Dr. Basavaraj Chunchure</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-7400567083</td></tr>
+              <tr><td>Dr. M. Sreenu</td><td>Associate Professor</td><td>M.Tech., Ph.D.</td><td>1-2196098026</td></tr>
+              <tr><td>Mrs. A. Srichandana</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-465766903</td></tr>
+              <tr><td>Mrs. S. Vineela Krishna</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-1500243103</td></tr>
+              <tr><td>Mr. Ahmed Shahebaaz</td><td>Sr. Assistant Professor</td><td>M.Tech., (Ph.D.)</td><td>1-2899785848</td></tr>
+              <tr><td>Dr. Annapurna Gummadi</td><td>Sr. Assistant Professor</td><td>M.Tech., Ph.D.</td><td>1-3360124514</td></tr>
+              <tr><td>Dr. Yasmeen</td><td>Sr. Assistant Professor</td><td>M.Tech., Ph.D.</td><td>1-4162853962</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

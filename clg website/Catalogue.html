@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Bookstore Catalogue</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+    .catalogue-container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background-color: #f9fafb;
+      font-weight: 600;
+    }
+    img {
+      max-width: 100px;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+    button {
+      background-color: #1a73e8;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+    }
+    button:hover {
+      background-color: #155bb5;
+    }
+  </style>
+</head>
+<body>
+  <div class="catalogue-container">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Online Bookstore Catalogue</h1>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white rounded-xl shadow-lg">
+        <thead>
+          <tr>
+            <th class="py-3 px-4 uppercase font-semibold text-sm text-gray-600 bg-gray-100 rounded-tl-xl">Book Image</th>
+            <th class="py-3 px-4 uppercase font-semibold text-sm text-gray-600 bg-gray-100">Book Information</th>
+            <th class="py-3 px-4 uppercase font-semibold text-sm text-gray-600 bg-gray-100">Price</th>
+            <th class="py-3 px-4 uppercase font-semibold text-sm text-gray-600 bg-gray-100 rounded-tr-xl">Add to Cart</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-3 px-4"><img src="https://placehold.co/100x150/E0E7FF/3B82F6?text=Alchemist" alt="The Alchemist" onerror="this.onerror=null;this.src='https://placehold.co/100x150/E0E7FF/3B82F6?text=Image+Not+Found';"></td>
+            <td class="py-3 px-4">
+              <strong class="text-lg">The Alchemist</strong><br>
+              Author: Paulo Coelho<br>
+              Genre: Fiction<br>
+              Year: 1988
+            </td>
+            <td class="py-3 px-4">₹499</td>
+            <td class="py-3 px-4">
+              <form action="Cart.html" method="get">
+                <input type="hidden" name="title" value="The Alchemist">
+                <input type="hidden" name="author" value="Paulo Coelho">
+                <input type="hidden" name="genre" value="Fiction">
+                <input type="hidden" name="price" value="499">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">
+                  Add to Cart
+                </button>
+              </form>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="py-3 px-4"><img src="https://placehold.co/100x150/E0E7FF/3B82F6?text=Wings+of+Fire" alt="Wings of Fire" onerror="this.onerror=null;this.src='https://placehold.co/100x150/E0E7FF/3B82F6?text=Image+Not+Found';"></td>
+            <td class="py-3 px-4">
+              <strong class="text-lg">Wings of Fire</strong><br>
+              Author: A.P.J. Abdul Kalam<br>
+              Genre: Autobiography<br>
+              Year: 1999
+            </td>
+            <td class="py-3 px-4">₹350</td>
+            <td class="py-3 px-4">
+              <form action="Cart.html" method="get">
+                <input type="hidden" name="title" value="Wings of Fire">
+                <input type="hidden" name="author" value="A.P.J. Abdul Kalam">
+                <input type="hidden" name="genre" value="Autobiography">
+                <input type="hidden" name="price" value="350">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">
+                  Add to Cart
+                </button>
+              </form>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="py-3 px-4"><img src="https://placehold.co/100x150/E0E7FF/3B82F6?text=Brief+History" alt="A Brief History of Time" onerror="this.onerror=null;this.src='https://placehold.co/100x150/E0E7FF/3B82F6?text=Image+Not+Found';"></td>
+            <td class="py-3 px-4">
+              <strong class="text-lg">A Brief History of Time</strong><br>
+              Author: Stephen Hawking<br>
+              Genre: Science<br>
+              Year: 1988
+            </td>
+            <td class="py-3 px-4">₹599</td>
+            <td class="py-3 px-4">
+              <form action="Cart.html" method="get">
+                <input type="hidden" name="title" value="A Brief History of Time">
+                <input type="hidden" name="author" value="Stephen Hawking">
+                <input type="hidden" name="genre" value="Science">
+                <input type="hidden" name="price" value="599">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg">
+                  Add to Cart
+                </button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

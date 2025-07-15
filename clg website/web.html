@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVR College Main Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+    .main-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .main-header img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .main-nav, .dept-nav {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .nav-link {
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+      font-weight: 500;
+      color: #374151;
+      text-decoration: none;
+      background-color: #e5e7eb; /* Default for department links */
+    }
+    .nav-link:hover {
+      background-color: #d1d5db;
+    }
+    .main-nav .nav-link {
+        background-color: #1a73e8; /* Main nav links are blue */
+        color: white;
+    }
+    .main-nav .nav-link:hover {
+        background-color: #155bb5;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-header">
+    <img src="https://cvr.ac.in/cse/logo.jpg" alt="CVR LOGO">
+    <h1 class="text-5xl font-extrabold text-gray-900 mb-2">CVR COLLEGE OF ENGINEERING</h1>
+    <h2 class="text-xl font-semibold text-gray-700">Vastunagar, Mangalpalli, Hyderabad</h2>
+  </div>
+
+  <div class="dept-nav">
+    <a href="CSE.html" class="nav-link">CSE</a>
+    <a href="DS.html" class="nav-link">DS</a>
+    <a href="AIDS.html" class="nav-link">AIDS</a>
+    <a href="CS.html" class="nav-link">CS</a>
+    <a href="AIML.html" class="nav-link">AIML</a>
+  </div>
+
+  <nav class="main-nav">
+    <a href="Home.html" class="nav-link">Home</a>
+    <a href="Login.html" class="nav-link">Login</a>
+    <a href="Registration.html" class="nav-link">Registration</a>
+    <a href="Catalogue.html" class="nav-link">Catalogue</a>
+    <a href="Cart.html" class="nav-link">Cart</a>
+  </nav>
+
+  <p class="text-center text-gray-600 mt-8">
+    This `web.html` file acts as the main entry point with navigation links to individual pages.
+    Each linked page is a separate HTML file.
+  </p>
+</body>
+</html>
