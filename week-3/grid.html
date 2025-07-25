@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grid and Flexbox</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "main sidebar"
+    "footer footer";
+  gap: 15px;
+  height: 100vh;
+  padding: 10px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #bb86fc;
+  color: #bb86fc;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.main {
+  grid-area: main;
+  padding: 20px;
+  background-color: #222222;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #bb86fc66;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+  background-color: #1f1f1f;
+  border-radius: 8px;2222  
+  box-shadow: 0 0 8px #03dac6aa;
+  color: #03dac6;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #1f1f1f;
+  padding: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid #333;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #bb86fc;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #3700b3;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <h1>Main Content Area</h1>
+    <p>Octopuses have three hearts! Two pump blood to the gills, and one pumps it to the rest of the body.</p>
+    <p>Also, their blood is blue because it uses copper-based hemocyanin to carry oxygen, which works better in cold, low-oxygen environments.</p>
+ <img src="https://cdn.pixelspray.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-product/491898339/665/491898339_1.webp" alt="Hamleys Product" style="width:100%; max-width:400px; border-radius:10px; margin-top:20px; box-shadow:0 0 10px #bb86fc66;">
+<img src="https://img.autocarindia.com/ExtraImages/20240927052734_Most%20fuel_efficient%20CNG%20cars%20_1_.jpg" alt="Fuel Efficient CNG Cars" style="width:100%; max-width:400px; border-radius:10px; margin-top:20px; box-shadow:0 0 10px #03dac6aa;">
+</main>
+  </main>
+
+  <aside class="sidebar">
+    <h2>Related Links</h2>
+    <ul>
+      <li><a href="#">Link1</a></li>
+      <li><a href="#">Link2</a></li>
+      <li><a href="#">Link3</a></li>
+    </ul>
+  </aside>
+
+  <footer class="footer">
+    <p>&copy; 2025 Grid and Flexbox</p>
+  </footer>
+</div>
+</body>
+</html>
