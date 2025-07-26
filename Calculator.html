@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator Design</title>
+  <style>
+    /* --- Universal Styles & Font --- */
+    :root {
+      --bg-color: #222831;
+      --display-bg: #393e46;
+      --button-bg: #4a525f;
+      --operator-bg: #00adb5;
+      --clear-bg: #d9534f;
+      --del-bg: #f0ad4e; /* Added color for DEL button */
+      --equal-bg: #5cb85c;
+      --text-color: #eeeeee;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #dddddd;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      margin: 0;
+    }
+
+    /* --- Calculator Body --- */
+    .calculator {
+      width: 100%;
+      max-width: 400px; /* Controls the max size */
+      background-color: var(--bg-color);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+      padding: 20px;
+    }
+
+    /* --- Display Screen --- */
+    .calculator-display {
+      width: 100%;
+      background-color: var(--display-bg);
+      border-radius: 10px;
+      padding: 15px 20px;
+      box-sizing: border-box;
+      text-align: right;
+      margin-bottom: 20px;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .display-expression {
+      font-size: 1.2rem;
+      color: #9a9a9a;
+      min-height: 25px; /* Prevents layout shift */
+      overflow-wrap: break-word;
+    }
+    .display-result {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: var(--text-color);
+      min-height: 50px; /* Prevents layout shift */
+      overflow-wrap: break-word;
+    }
+
+    /* --- Button Grid Layout --- */
+    .calculator-keys {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); /* 5 columns for a compact layout */
+      gap: 12px;
+    }
+
+    /* --- General Button Styling --- */
+    .btn {
+      height: 60px;
+      border: none;
+      border-radius: 12px;
+      background-color: var(--button-bg);
+      color: var(--text-color);
+      font-size: 1.2rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.15s ease;
+    }
+    .btn:hover {
+      background-color: #606875;
+      transform: translateY(-2px); /* Slight lift effect */
+    }
+    .btn:active {
+      transform: translateY(1px); /* Push down effect */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* --- Color-Coded Button Variations --- */
+    .btn-number {
+      background-color: #58616d;
+    }
+    .btn-operator {
+      background-color: var(--operator-bg);
+      font-size: 1.5rem;
+    }
+    .btn-operator:hover {
+      background-color: #00c2cb;
+    }
+    .btn-clear {
+      background-color: var(--clear-bg);
+      font-weight: bold;
+    }
+    .btn-clear:hover {
+      background-color: #e06d69;
+    }
+    .btn-del { /* Style for the new DEL button */
+      background-color: var(--del-bg);
+      font-weight: bold;
+    }
+    .btn-del:hover {
+      background-color: #f3b970;
+    }
+    .btn-equal {
+      background-color: var(--equal-bg);
+      grid-column: span 2; /* Make the equals button wider */
+    }
+    .btn-equal:hover {
+      background-color: #6dca6d;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <!-- Display Section - Now with content -->
+    <div class="calculator-display">
+      <div class="display-expression"></div>
+      <div class="display-result">0</div>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="calculator-keys">
+      <!-- Row 1: Scientific Functions -->
+      <button class="btn">sin</button>
+      <button class="btn">cos</button>
+      <button class="btn">tan</button>
+      <button class="btn">log</button>
+      <button class="btn">ln</button>
+
+      <!-- Row 2: More Functions & Controls -->
+      <button class="btn">x²</button>
+      <button class="btn">√</button>
+      <button class="btn">(</button>
+      <button class="btn">)</button>
+      <button class="btn-clear">C</button>
+      
+      <!-- Row 3: Numbers and Operators -->
+      <button class="btn btn-number">7</button>
+      <button class="btn btn-number">8</button>
+      <button class="btn btn-number">9</button>
+      <button class="btn btn-operator">÷</button>
+      <button class="btn btn-operator">×</button>
+
+      <!-- Row 4: Numbers and Operators -->
+      <button class="btn btn-number">4</button>
+      <button class="btn btn-number">5</button>
+      <button class="btn btn-number">6</button>
+      <button class="btn btn-operator">-</button>
+      <button class="btn btn-operator">+</button>
+      
+      <!-- Row 5: Numbers and Equals -->
+      <button class="btn btn-number">1</button>
+      <button class="btn btn-number">2</button>
+      <button class="btn btn-number">3</button>
+      <button class="btn btn-equal">=</button> <!-- Spans 2 columns -->
+
+      <!-- Row 6: Final Numbers & New DEL button -->
+      <button class="btn btn-number">0</button>
+      <button class="btn btn-number">.</button>
+      <button class="btn">π</button>
+      <button class="btn">%</button>
+      <button class="btn btn-del">DEL</button> <!-- Changed from x! -->
+    </div>
+  </div>
+
+</body>
+</html>
