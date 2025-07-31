@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu - The Cozy Corner</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<main class="container my-5">
+
+  <!-- 🌟 Bootstrap Carousel -->
+  <div id="featuredCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner rounded shadow">
+      <div class="carousel-item active">
+        <img src="https://vashishti.com/cdn/shop/articles/restaurant-style-paneer-butter-masala-2_1024x1024.jpg?v=1732182401" class="d-block w-25" alt="Paneer Delight">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+          <h5>Paneer Delight</h5>
+          <p>Signature creamy paneer with house spices</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.mysavoryadventures.com/wp-content/uploads/2023/04/restaurant-style-butter-chicken.jpg" class="d-block w-25" alt="Butter Chicken">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+          <h5>Butter Chicken</h5>
+          <p>Rich, buttery chicken curry cooked slow</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- 🥣 Soups as Bootstrap Cards -->
+  <section class="mb-5">
+    <h2 class="text-center text-danger">🍲 Soups</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Tomato Basil Soup – ₹110</h5>
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#soup1">View Description</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Mushroom Cream Soup – ₹120</h5>
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#soup2">View Description</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🍗 Starters Section -->
+  <section class="mb-5">
+    <h2 class="text-center text-danger">🥗 Starters</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Paneer Tikka – ₹120</h5>
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#starter1">View Description</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Chicken Lollipops – ₹150</h5>
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#starter2">View Description</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔍 Modal Dialogs (Static Content) -->
+  <div class="modal fade" id="soup1" tabindex="-1" aria-labelledby="soup1Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="soup1Label">Tomato Basil Soup</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          A tangy delight with fresh basil and slow-cooked tomatoes.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="soup2" tabindex="-1" aria-labelledby="soup2Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="soup2Label">Mushroom Cream Soup</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          A velvety blend of mushrooms, cream, and herbs.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="starter1" tabindex="-1" aria-labelledby="starter1Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="starter1Label">Paneer Tikka</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Cottage cheese cubes marinated and grilled with spices.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="starter2" tabindex="-1" aria-labelledby="starter2Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="starter2Label">Chicken Lollipops</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Crispy chicken wings tossed in spicy sauce.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Bootstrap JS Bundle (Required for modal/carousel) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* Universal Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Base Layout */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px; /* Added overall padding to the body */
+  background-color: #E6BFB3;
+  color: #4A4A4A; /* Dark grey for general text */
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Main container styling */
+main {
+  padding: 40px;
+  max-width: 1000px;
+  margin: 20px auto;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(230, 191, 179, 0.6);
+  border-radius: 15px;
+}
+
+/* Headings */
+h1, h2 {
+  color: #CD5C5C; /* Indian Red */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3, h5 {
+  color: #8B4513; /* Saddle Brown */
+}
+
+/* Buttons */
+.btn-rose {
+  background-color: #F4C2C2;
+  color: #4A4A4A;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-rose:hover {
+  background-color: #CD5C5C;
+  color: #fff;
+}
+
+/* Custom Card Enhancements */
+.card {
+  border-radius: 12px !important;
+  background-color: #FFFBF7 !important;
+  border: 1px solid #F0D9D0 !important;
+}
+
+.card-title {
+  color: #8B4513;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #4A4A4A;
+}
+
+/* Carousel Enhancements */
+.carousel-inner img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* List Styling */
+ul {
+  padding-left: 1rem;
+}
+
+li {
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for list items */
+li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(230, 191, 179, 0.7);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  main {
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  .carousel-caption {
+    font-size: 14px;
+  }
+
+  .btn-rose {
+    width: 100%;
+  }
+}
+footer {
+  background-color: #E6BFB3; /* Light Tea Rose Pink - footer color */
+  color: #654321; /* Dark Brown for footer text */
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px; /* Rounded corners for the footer */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
