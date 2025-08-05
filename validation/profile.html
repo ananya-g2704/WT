@@ -1,22 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Validation</title>
+<title>Profile</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #dff0f5;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+  }
+  .sidebar {
+    background-color: #007bff;
+    padding: 20px;
+    width: 200px;
+    min-height: 100vh;
+    
+  }
+  .sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-weight: bold;
+  }
+  .main {
+    flex-grow: 1;
+    padding: 40px;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
-<a href="Registration.html">Registration</a>
+<div class="container">
+  <div class="sidebar">
+    <a href="Registration.html">Registration</a>
 <a href="logindemo.html">Login</a>
 <a href="profile.html">Profile</a>
-<a href="payment.html">payment</a>
-  <h1> User Profile Page</h1>
-  <form>
-    <label for="fullname">Full Name:</label>
-    <input type="text" id="fullname" name="fullname"><br><br>
-    <label for="birthdate">Birthdate:</label>
-    <input type="date" id="birthdate" name="birthdate"><br><br>
-    <label for="phone">Phone:</label>
-    <input type="tel" id="phone" name="phone"><br><br>
-    <input type="submit" value="Update Profile">
-  </form>
+<a href="payment.html">Payment</a>
+  </div>
+<div class="main">
+
+<h1>User Profile Page</h1>
+<form id="Profile" onsubmit="return validateProfile()">
+<label for="Profilename">Full Name:</label>
+<input type="text" id="Profilename"><br><br>
+
+<label for="ProfileBirthDate">Birthdate:</label>
+<input type="date" id="ProfileBirthDate"><br><br>
+
+<label for="ProfilePhone">Phone:</label>
+<input type="tel" id="ProfilePhone"><br><br>
+
+<input type="submit" value="Update Profile">
+<div id="ProfileError" style="color:red;"></div>
+</form>
+<script>
+function validateProfile() {
+    var name = document.getElementById('Profilename').value.trim();
+    var birthdate = document.getElementById('ProfileBirthDate').value;
+    var phone = document.getElementById('ProfilePhone').value.trim();
+    var phoneRegex = /^\d{10}$/;
+    var errorDiv = document.getElementById('ProfileError');
+
+    if (name === '' || birthdate === '' || phone === '') {
+        errorDiv.textContent = 'All fields are required';
+        return false;
+    }
+
+    var birthDateObj = new Date(birthdate);
+    var today = new Date();
+    if (birthDateObj >= today) {
+        errorDiv.textContent = 'Birthdate must be in the past';
+        return false;
+    }
+
+    if (!phoneRegex.test(phone)) {
+        errorDiv.textContent = 'Phone number must be exactly 10 digits';
+        return false;
+    }
+
+    errorDiv.textContent = '';
+    alert('Profile updated');
+    return true;
+}</script>
+  </div>
+</div>
 </body>
 </html>

@@ -1,25 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Validation</title>
+<title>Payment</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #dff0f5;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+  }
+  .sidebar {
+    background-color: #007bff;
+    padding: 20px;
+    width: 200px;
+    min-height: 100vh;
+    
+  }
+  .sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-weight: bold;
+  }
+  .main {
+    flex-grow: 1;
+    padding: 40px;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
+<div class="container">
+  <div class="sidebar">
+    <h1>Validation Page</h1>
 <a href="Registration.html">Registration</a>
 <a href="logindemo.html">Login</a>
 <a href="profile.html">Profile</a>
-<a href="payment.html">payment</a>
-  <h1>Payment page</h1>
-  <form>
-    <label for="account-number">Account Number:</label>
-    <input type="text" id="account-number" name="account-number"><br><br>
+<a href="payment.html">Payment</a>
+  </div>
+<div class="main">
+    <h1>Payment Page</h1>
+<form id="Payment" onsubmit="return validatePayment()">
+<label for="CardNumber">Card Number:</label>
+<input type="text" id="CardNumber"><br><br>
 
-    <label for="expiry-date">Expiry Date:</label>
-    <input type="month" id="expiry-date" name="expiry-date"><br><br>
+<label for="expiry">Expiry Date (MM/YY):</label>
+<input type="text" id="expiry" placeholder="MM/YY"><br><br>
 
-    <label for="cvv">CVV:</label>
-    <input type="password" id="cvv" name="cvv" maxlength="4"><br><br>
+<label for="CVV">CVV:</label>
+<input type="password" id="CVV" maxlength="3"><br><br>
 
-    <input type="submit" value="pay">
-  </form>
+<input type="submit" value="Pay">
+<div id="paymentError" style="color:red;"></div>
+</form>
+<script>
+function validatePayment() {
+    var cardNumber = document.getElementById('CardNumber').value.trim();
+    var expiry = document.getElementById('expiry').value.trim();
+    var cvv = document.getElementById('CVV').value.trim();
+    var cardRegex = /^\d{16}$/;
+    var expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;  // Format: MM/YY
+    var cvvRegex = /^\d{3}$/;
+    var errorDiv = document.getElementById('paymentError');
+
+    if (cardNumber === '' || expiry === '' || cvv === '') {
+        errorDiv.textContent = 'All fields are required';
+        return false;
+    }
+
+    if (!cardRegex.test(cardNumber)) {
+        errorDiv.textContent = 'Card number must be 16 digits';
+        return false;
+    }
+
+    if (!expiryRegex.test(expiry)) {
+        errorDiv.textContent = 'Expiry must be in MM/YY format';
+        return false;
+    }
+
+    if (!cvvRegex.test(cvv)) {
+        errorDiv.textContent = 'CVV must be 3 digits';
+        return false;
+    }
+
+    errorDiv.textContent = '';
+    alert('Payment validated');
+    return true;
+}</script>
+  </div>
+</div>
 </body>
 </html>
